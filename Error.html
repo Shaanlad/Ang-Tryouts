@@ -1,13 +1,18 @@
-// Ang-material design example - Error
+<!-- Ang-material design example - with Error -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ang-material Error  example </title>
+  <title>Ang-material Error </title>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-messages.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 </head>
 <body>
 
-<div ng-controller="AppCtrl" layout="column" ng-cloak>
-
+<div ng-app="inputErrorsApp" ng-controller="AppCtrl" layout="column" ng-cloak>
   <md-content layout-padding>
     <form name="projectForm">
 
@@ -82,12 +87,36 @@
       </div>
 
       <p style="font-size:.8em; width: 100%; text-align: center;">
-        Make sure to include <a href="https://docs.angularjs.org/api/ngMessages" target="_blank">ngMessages</a> module when using ng-message markup.
+        <!-- Make sure to include <a href="https://docs.angularjs.org/api/ngMessages" target="_blank">ngMessages</a> module when using ng-message markup. -->
       </p>
-    </form>
+    </form> 
   </md-content>
 
 </div>
+
+<script>
+  angular.module('inputErrorsApp', ['ngMaterial', 'ngMessages'])
+
+  .controller('AppCtrl', function($scope) {
+    $scope.project = {
+      description: 'Nuclear Missile Defense System',
+      rate: 500
+    };
+  });
+
+// angular.module('app', ['ngMessages']);
+
+</script>
+<style type="text/css">
+  .inputdemoErrors .inputErrorsApp {
+  min-height: 48px; }
+
+.inputdemoErrors md-input-container > p {
+  font-size: 0.8em;
+  text-align: left;
+  width: 100%; }
+
+</style>
 
 </body>
 </html>
